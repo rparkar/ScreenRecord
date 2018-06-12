@@ -9,7 +9,7 @@
 import UIKit
 import ReplayKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, RPPreviewViewControllerDelegate {
     
     //outlets
     @IBOutlet weak var statusLabel: UILabel!
@@ -65,7 +65,7 @@ class MainViewController: UIViewController {
         //
         recorder.startRecording { (error) in
             
-             guard error = nil else {
+             guard error ==  nil else {
                 print("error recording")
                 return
             }
@@ -83,6 +83,47 @@ class MainViewController: UIViewController {
             }
 
         }
+    }
+    
+    func stopRecording () {
+        
+        recorder.stopRecording { (preview, error) in
+            
+            guard preview != nil else {
+                print("preview controller not AV")
+                return
+            }
+            
+            let alert = UIAlertController(title: "Finished", message: "would you like to edit or delete your recording", preferredStyle: .alert)
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
+                
+                self.recorder.discardRecording {
+                    print("Recording deleted succesfully")
+                }
+            })
+            
+            let editAction = UIAlertAction(title: "Edit", style: .default, handler: { (action) in
+                
+                preview?.previewControllerDelegate = self
+                self.present(preview, animated: true, completion: nil)
+            })
+            
+            alert.addAction(deleteAction)
+            alert.addAction(editAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            self.isRecording = false
+            self.viewReset()
+        }
+        
+    }
+    
+    func viewReset () {
+        statusLabel.text = "Ready to Record"
+        statusLabel.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        micToogleSwitch.isEnabled = true
+        recordButton.setTitle("Record", for: .normal)
+        recordButton.setTitleColor(#colorLiteral(red: 0.9896476865, green: 0.6665952206, blue: 0.3434123397, alpha: 1), for: .normal)
     }
     
 

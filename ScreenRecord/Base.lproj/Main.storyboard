@@ -35,6 +35,7 @@
                                             <segment title="Skate"/>
                                             <segment title="Nature"/>
                                         </segments>
+                                        <color key="tintColor" red="0.94275027509999998" green="0.68063069779999996" blue="0.4012731055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="imagePicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="kLC-FA-EYM"/>
                                         </connections>
@@ -62,6 +63,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zt-ct-6zN">
                                         <rect key="frame" x="0.0" y="505" width="335" height="112"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                        <color key="tintColor" red="0.94275027509999998" green="0.68063069779999996" blue="0.4012731055" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Record"/>
                                         <connections>
                                             <action selector="RecordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Cn-kg-4qt"/>
