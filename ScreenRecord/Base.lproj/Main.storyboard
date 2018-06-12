@@ -18,46 +18,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dww-z1-Ovm">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Dww-z1-Ovm">
                                 <rect key="frame" x="20" y="40" width="335" height="617"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready To Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4w-vT-wUO">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="32"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d1E-rG-Obn">
-                                        <rect key="frame" x="0.0" y="43" width="335" height="28.5"/>
+                                        <rect key="frame" x="0.0" y="44" width="335" height="27.5"/>
                                         <segments>
-                                            <segment title="Skate"/>
+                                            <segment title="Animal"/>
                                             <segment title="Food"/>
-                                            <segment title="Cat"/>
+                                            <segment title="Skate"/>
                                             <segment title="Nature"/>
                                         </segments>
                                         <connections>
                                             <action selector="imagePicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="kLC-FA-EYM"/>
                                         </connections>
                                     </segmentedControl>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3cq-Gm-9DX">
-                                        <rect key="frame" x="0.0" y="80.5" width="335" height="411"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="3cq-Gm-9DX">
+                                        <rect key="frame" x="0.0" y="82.5" width="335" height="335"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="335" id="MTb-zc-eOt"/>
+                                        </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kgk-eX-74l">
-                                        <rect key="frame" x="0.0" y="501.5" width="335" height="66"/>
+                                        <rect key="frame" x="0.0" y="429.5" width="335" height="63.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microphone Access" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qz-bU-OBN">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Microphone Access" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qz-bU-OBN">
                                                 <rect key="frame" x="86.5" y="0.0" width="162" height="25"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dPR-Yq-5l5">
-                                                <rect key="frame" x="143" y="35" width="51" height="31"/>
+                                                <rect key="frame" x="143" y="35" width="51" height="28.5"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zt-ct-6zN">
-                                        <rect key="frame" x="0.0" y="577.5" width="335" height="39.5"/>
+                                        <rect key="frame" x="0.0" y="505" width="335" height="112"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                         <state key="normal" title="Record"/>
                                         <connections>
@@ -89,4 +92,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cat" width="640" height="426"/>
+    </resources>
 </document>
