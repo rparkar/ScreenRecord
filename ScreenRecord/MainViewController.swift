@@ -126,6 +126,9 @@ class MainViewController: UIViewController, RPPreviewViewControllerDelegate {
         recordButton.setTitleColor(#colorLiteral(red: 0.9896476865, green: 0.6665952206, blue: 0.3434123397, alpha: 1), for: .normal)
     }
     
+    func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
 
