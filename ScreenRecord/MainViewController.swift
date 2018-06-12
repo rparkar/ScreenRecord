@@ -21,6 +21,7 @@ class MainViewController: UIViewController {
     
     //variables
     var recorder = RPScreenRecorder.shared()
+    private var isRecording = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class MainViewController: UIViewController {
     
     @IBAction func imagePicked(_ sender: UISegmentedControl) {
         
-        switch sender {
+        switch sender.selectedSegmentIndex {
         case 0: selectedImage.image = UIImage(named: "cat")!
         case 1: selectedImage.image = UIImage(named: "food")!
         case 2: selectedImage.image = UIImage(named: "skate")!
@@ -40,8 +41,49 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func RecordButtonPressed(_ sender: Any) {
+        
+    
+        if isRecording = false {
+            startRecording()
+        } else {
+            //stop record
+        }
     }
     
+    func startRecording() {
+        
+        //recorder
+        guard recorder.isAvailable else {return}
+        
+        //mic
+        if micToogleSwitch.isOn {
+            recorder.isMicrophoneEnabled = true
+        } else {
+            recorder.isMicrophoneEnabled = false
+        }
+        
+        //
+        recorder.startRecording { (error) in
+            
+             guard error = nil else {
+                print("error recording")
+                return
+            }
+            
+            print("recording")
+            
+            DispatchQueue.main.async {
+                
+                self.micToogleSwitch.isEnabled = false
+                self.recordButton.setTitleColor(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), for: .normal)
+                self.recordButton.setTitle("Stop", for: .normal)
+                self.statusLabel.text = "Recording..."
+                self.statusLabel.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+                self.isRecording = true
+            }
+
+        }
+    }
     
 
 }
